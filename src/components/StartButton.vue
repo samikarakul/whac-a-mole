@@ -7,6 +7,16 @@
     >
         Start
     </button>
+    
+    <!-- <router-link 
+        to="/game"
+        class="btn_start btnStart_beginning" 
+        @mouseenter="btnStart_mouseEnter"
+        @mouseleave="btnStart_mouseleave"
+        @mousedown="btnStart_mouseDown"
+    >
+        Start
+    </router-link> -->
 </template>
 
 <script>

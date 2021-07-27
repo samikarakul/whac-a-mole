@@ -42,6 +42,7 @@ export default {
   components: {Target, UserScore, GameSetup, PlayButton, GameInformations, ToggleScoreHistoryButton, CurrentSetupInformation},
   computed: {
       username(){
+          if(localStorage.getItem('username') == '') localStorage.setItem('username', 'Anonym')
           return localStorage.getItem('username')
       },
       difficulty_level(){
