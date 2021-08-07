@@ -1,11 +1,10 @@
 <template>
-  <div>
-      
+  <div id="game" >
       <router-link to="/">Change Difficulty Level or Username</router-link>
 
       <CurrentSetupInformation :username="username" :difficulty_level="difficulty_level"/>
 
-      <PlayButton @startGame='startGame' :gameOver='isFinished' />
+      <PlayButton @startGame='startGame' :gameOver='isFinished'/>
 
       <div v-if="isPlaying">
         <GameInformations :lives="lives" :score="score" :username="username"/>
@@ -36,6 +35,7 @@ import PlayButton from '../components/PlayButton.vue'
 import GameInformations from '../components/GameInformations.vue'
 import ToggleScoreHistoryButton from '../components/ToggleScoreHistoryButton.vue'
 import CurrentSetupInformation from '../components/CurrentSetupInformation.vue'
+import hammer_small from '../assets/hammer_small.png'
 
 export default {
   name: 'App',
@@ -48,6 +48,9 @@ export default {
       difficulty_level(){
           return localStorage.getItem('diff_lvl')
       }
+  },
+  created(){
+      document.body.style.cursor = 'url("'+hammer_small+'"), default'
   },
   data(){
     return{
@@ -70,6 +73,7 @@ export default {
         this.isPlaying = true
         this.isFinished = false
         this.showScoreHistory = false
+
     },
     raiseScore(targetScore)
     {
@@ -111,8 +115,36 @@ export default {
   margin-top: 60px;
 }
 .userScoreHistory{
+  height: 450px;
   width: 50%;
+  padding-right: 50px;
+  padding-left: 20px;
+  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* background: black; */
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5778C1;  
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #325FC3; 
 }
 </style>

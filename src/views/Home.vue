@@ -8,6 +8,7 @@
                 :select_err="select_err"
                 @selected="changeDifficulty" 
                 @enteredUsername='changeUsername'
+                class="home_gameSetup"
             />
         </div>
         <div v-if="difficulty_level" class="startButtonDiv">
@@ -57,6 +58,11 @@ export default {
 </script>
 
 <style>
+.home_gameSetup{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .gameSetup_app{
   width: 50%;
   margin: auto;

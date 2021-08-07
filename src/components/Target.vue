@@ -4,7 +4,8 @@
     :style="{left: x + 'px',top: y + 'px',}"
     @click="targetFounded"
 >
-    <p>CATCH</p>
+    <img src="../assets/mole.png" class="mole"/>
+
 </div>
 </template>
 
@@ -69,18 +70,18 @@ export default {
 
 <style>
 .target{
-    width: 200px;
-    height: 200px;
-    background: red;
-    border-radius: 25px;
+    width: 150px;
+    height: 100px;
+    background: #000;
+    /* border-radius: 25px; */
+    border-radius: 50%;
     text-align: center;
     color: white;
     position: relative;
     border: 2px solid black;
 }
-.target p{
-    position: absolute;
-    top: 35%;
-    left: 35%;
+.mole{
+    margin-top: -30%;
 }
+
 </style>

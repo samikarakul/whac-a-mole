@@ -28,6 +28,11 @@ export default {
 </script>
 
 <style>
+.gameSetup{
+    margin-left: 30%;
+    /* padding-top: 10px; */
+}
+
 .gameSetup_username, .gameSetup_difficulty_level{
     display: block;
     margin-top: 20px;
@@ -36,9 +41,13 @@ export default {
 }
 
 .gameSetup_username{
+    font-family: Comic Sans MS;
     border: none;
-    width: 100%;
-
+    width: 51%;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
 }
 .gameSetup_username:focus{
     outline: none !important;
@@ -53,10 +62,13 @@ export default {
     outline: none !important;
     font-family: Andale Mono, monospace;
     font-size: 15px;
-    width: 200px;
+    padding-left: 15px;
+    width: 57%;
 
 }
-#dropdown_difficultyLevel option{
+/* #dropdown_difficultyLevel option{
+    outline: none !important;
     width: 200px !important;
-}
+    border: none;
+} */
 </style>
